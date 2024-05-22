@@ -1,16 +1,44 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class Solution {
 
-        public int scoreOfString(String s) {
+    public int scoreOfString(String s) {
 
-            int answer = 0;
+        int answer = 0;
 
-            for (int i = 0; i < s.length() - 1; i++) {
-                int difference = Math.abs(s.charAt(i) - s.charAt(i + 1));
-                answer += difference;
-            }
+        for (int i = 0; i < s.length() - 1; i++) {
+            int difference = Math.abs(s.charAt(i) - s.charAt(i + 1));
+            answer += difference;
+        }
 
-            return answer;
+        return answer;
 
 
     }
+
+    public int findPermutationDifference(String s, String t) {
+
+
+        Map<Character,Integer> nm=new HashMap<>();
+        for(int i=0;i<s.length();i++)
+        {
+            char c=s.charAt(i);
+            nm.put(c,i);
+        }
+        Map<Character,Integer> kk=new HashMap<>();
+        for(int i=0;i<t.length();i++)
+        {
+            char c=t.charAt(i);
+            kk.put(c,i);
+        }
+        int ans=0;
+        for(char c:nm.keySet())
+        {
+            ans=ans+Math.abs(nm.get(c)-kk.get(c));
+        }
+        return ans;
+    }
+
+
 }
