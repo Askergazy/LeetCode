@@ -6,14 +6,13 @@ public class Main {
     public static void main(String[] args) {
 
 
-        String s = "rwohu";
-        String t = "rwuoh";
-
 
         Solution solution = new Solution();
 
-        double celc = 36.50;
 
-        System.out.println(Arrays.toString(solution.convertTemperature(celc)));
+        int n = 10, m = 3;
+
+        System.out.println(solution.differenceOfSums(n, m));
+
     }
 }
